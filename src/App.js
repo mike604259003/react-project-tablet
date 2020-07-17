@@ -8,9 +8,9 @@ import Home from './Page/Home';
 import Qrcode from './Page/Qrcode';
 import Menu from './Page/Menu';
 import Menulist from './Page/Menulist';
-
+import Menulist2 from './Page/Menulist2';
+import Menulist3 from './Page/Menulist3';
 import CheckBill from './Page/CheckBill';
-
 import Questionnaire from './Page/Questionnaire';
 import HomeEdit from './Page/HomeEdit';
 import MenulistCancel from './Page/MenulistCancel';
@@ -25,15 +25,15 @@ class App extends Component{
       <div className="App">
       <HashRouter history={history}>
         <Switch>
-          <PrivateRoute exact path="/" component={Config_table} />{/**/ }
-          <Route path="/login" component={Signin}/>{/**/ }
-          <Route path="/logout" component={Logout}/>{/**/ }
-          <Route path='/qrcode' component={Qrcode} />{/**/ }
-          <Route path='/menu' component={Menu} />{/**/ }
-          <Route path='/menulist' component={Menulist} />{/**/ }
-         
+          <PrivateRoute exact path="/" component={Config_table} />
+          <Route path="/login" component={Signin}/>
+          <Route path="/logout" component={Logout}/>
+          <Route path='/qrcode' component={Qrcode} />
+          <Route path='/menu' component={Menu} />
+          <Route path='/menulist' component={Menulist} />
+          <Route path='/menulist2' component={Menulist2} />
+          <Route path='/menulist3' component={Menulist3} />
           <Route path='/checkbill' component={CheckBill} />
-         
           <Route path='/questionnaire' component={Questionnaire} />
           <Route path="/homeedit" component={HomeEdit} />
           <Route path="/menulistcancel" component={MenulistCancel} />
