@@ -18,6 +18,7 @@ import api from '../Url_api';
           'password': Password
         }))
         .then(res => {
+            
             if(res.data.status == true){
                 this.props.history.push("/homeedit");
             }else{
@@ -84,7 +85,7 @@ import api from '../Url_api';
                                 <a href="#menulist2">
                                 <h4>ประวัติการสั่ง</h4>
                                 </a>
-                                <p>ตรวจสอบรายการที่สั่งทั่งหมด</p>
+                                <p>ตรวจสอบจำนวนรายการที่สั่งทั่งหมดว่ามีกี่ครั้ง</p>
                             </div>
                             </div>
                         </div>

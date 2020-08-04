@@ -48,8 +48,8 @@ import 'react-toastify/dist/ReactToastify.css';
         .then(res => {
           
            this.setState({
-               checkOrder:res.data
-           })
+               checkOrder:res.data // property คุณสมบัตร ค่าที่ส่งเข้าไปใน component  เก็บไว้ใน property ชื่อ prop / state คือ ค่าต่างๆที่อยู่ใน component 
+           }) // เมทธอด ใช้ควบคุมการทำงานต่างๆ ของ component 
         });
 
 
@@ -98,10 +98,10 @@ import 'react-toastify/dist/ReactToastify.css';
                                     <h4>จำนวน(คน)</h4>
                                 </th>
                                 <th>
-                                    <h4>ราคาต่อคน</h4>
+                                    <h4>ราคาต่อคน(บาท)</h4>
                                 </th>
                                 <th>
-                                    <h4>ราคา</h4>
+                                    <h4>ราคา(บาท)</h4>
                                 </th>
                                 </tr>
                                 <tr>
@@ -112,10 +112,10 @@ import 'react-toastify/dist/ReactToastify.css';
                                 <h4>{this.state.data.b_amount_people}</h4>
                                 </td>
                                 <td>
-                                    <h4>{this.state.data.b_price}</h4>
+                                    <h4>{this.state.data.b_price}{".00 "}</h4>
                                 </td>
                                 <td>
-                                    <h4>{this.state.data.b_amount_people * this.state.data.b_price}</h4>
+                                    <h4>{this.state.data.b_amount_people * this.state.data.b_price}{".00 "}</h4>
                                 </td>
                                 </tr>
                                 { this.state.data.b_qa === "yes" ?
@@ -135,12 +135,12 @@ import 'react-toastify/dist/ReactToastify.css';
                                    
                                 </td>
                                 <td>
-                                   
+                                <h4>ราคารวม{" "}</h4>
                                 </td>
                                 <td>
                                 {this.state.data.b_qa === "yes" ?
                                  <h4>
-                                 ราคารวม{" "}
+                                 
                                  <center>
                                      <div
                                      style={{
@@ -156,7 +156,7 @@ import 'react-toastify/dist/ReactToastify.css';
                                  </h4>
                                 :
                                 <h4>
-                                ราคารวม{" "}
+                                {/* ราคารวม{" "} */}
                                 <center>
                                     <div
                                     style={{
@@ -166,7 +166,7 @@ import 'react-toastify/dist/ReactToastify.css';
                                         textAlign: "right"
                                     }}
                                     >
-                                    {this.state.data.b_amount_people * this.state.data.b_price}{" "}
+                                    {this.state.data.b_amount_people * this.state.data.b_price}{".00 "}
                                     </div>
                                 </center>
                                 </h4>    

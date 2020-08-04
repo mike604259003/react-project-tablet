@@ -4,7 +4,7 @@ import axios from 'axios';
 import api from '../Url_api';
 
  class Menulist2 extends React.Component{
-    constructor(props){
+    constructor(props){ //จะถูกเรียกใช้งานทันทีหลังการ render
         super(props);
         this.state = {
             data: [],

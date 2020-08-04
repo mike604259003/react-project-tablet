@@ -36,7 +36,7 @@ import QRcode from 'qrcode.react';
 
                         <div className="media-body">
                         <Logo_compo />
-                            <p /><h4>แสกน Qr Code <br />เพื่อสั่งอาหารร่วมกัน</h4><p />
+                            <p /><h4>สแกน Qr Code <br />เพื่อสั่งอาหารร่วมกัน</h4><p />
                             <a className="w3-btn w3-dark-grey w3-large" href="#menu">&nbsp;&nbsp; ย้อนกลับ &nbsp;&nbsp;</a> 
                             {/* <a className="button button-hero button-shadow" href="/menu"> ทำรายการต่อ</a>  */}
                         </div>

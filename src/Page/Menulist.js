@@ -8,12 +8,12 @@ import Deletemenu from './deletemenu';
 
 
 class Menulist extends React.Component {
-
+//จะเป็น method แรกที่ถูกทำงานก่อนการ render
     constructor(props) {
         super(props);
         this.state = {
             data: [],
-           food: "",
+            food: "",
             order_id: null,
             statusDelete: "",
             order_list:[]
@@ -24,7 +24,7 @@ class Menulist extends React.Component {
     }
 
     componentDidMount() {
-       
+//จะถูกเรียกใช้งานทันทีหลังการ render
         const table_id = localStorage.getItem('table_id');
      
             axios.post(api('getOrderGroup'), 
