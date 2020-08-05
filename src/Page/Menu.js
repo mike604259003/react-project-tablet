@@ -2,11 +2,25 @@ import React from 'react';
 import Logo_compo from './logo_compo';
 import axios from 'axios';
 import api from '../Url_api';
-
+import QRcode from 'qrcode.react';
  class Menu extends React.Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            table_id: "",
+            bill_id: ""
+        }
+    }
+
+    componentDidMount() {
+        const table_id = localStorage.getItem('table_id');
+        const bill_id = localStorage.getItem('bill_id');
+        this.setState({
+            table_id: table_id,
+            bill_id: bill_id
+        })
+
     }
 
     confirm= (e) => {
@@ -36,23 +50,17 @@ import api from '../Url_api';
                         <br />
                        <Logo_compo />
                         <br />
-                        <br />
                         <div className="row">
                         <div className="col-lg-6">
                             <div className="media align-items-center food-card">
                                 <h1>{this.props.data}</h1>
-                                
-                            <img
-                                className="mr-3 mr-sm-4"
-                                src="assets/image/qr code.png"
-                                width={99}
-                                height={99}
-                            />
+                                <QRcode className="styleQR"  value={"https://mike604259003.github.io/react-project-mobile/#/home/" + this.state.table_id + "/" + this.state.bill_id} />
+
                             <div className="media-body">
                                 <a href="#qrcode">
                                 <h4>Qr Code สั่งอาหาร</h4>
                                 </a>
-                                <p>แสกน Qr Code เพื่อสั่งอาหาร</p>
+                                <p>สแกน Qr Code เพื่อสั่งอาหาร</p>
                             </div>
                             </div>
                         </div>
@@ -61,8 +69,7 @@ import api from '../Url_api';
                             <img
                                 className="mr-3 mr-sm-4"
                                 src="assets/image/clipboard.png"
-                                width={99}
-                                height={99}
+                                height={150}
                             />
                             <div className="media-body">
                                 <a href="#menulist">

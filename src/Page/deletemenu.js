@@ -17,6 +17,7 @@ class Deletemenu extends Component {
   componentDidMount(){
     const id = this.props.id;
     const table_id = this.props.table_id;
+    // console.log("Table"+table_id);
   
     this.setState({
       id:id,
@@ -26,7 +27,7 @@ class Deletemenu extends Component {
   }
 
   delete = () => {
-
+// console.log(this.state.id+" "+this.state.table_id);
     
     axios.post(api('deletemenu'), 
         JSON.stringify({

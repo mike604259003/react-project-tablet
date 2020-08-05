@@ -16,7 +16,8 @@ class Menulist extends React.Component {
             food: "",
             order_id: null,
             statusDelete: "",
-            order_list:[]
+            order_list:[],
+            table_id: 0
 
 
         }
@@ -26,7 +27,9 @@ class Menulist extends React.Component {
     componentDidMount() {
 //จะถูกเรียกใช้งานทันทีหลังการ render
         const table_id = localStorage.getItem('table_id');
-     
+        this.setState({
+            table_id:table_id
+        })
             axios.post(api('getOrderGroup'), 
             JSON.stringify({
                 'table_id' : table_id
