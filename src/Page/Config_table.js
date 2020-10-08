@@ -3,66 +3,84 @@ import axios from 'axios';
 import api from '../Url_api';
 import { Link } from 'react-router-dom';
 
-class Config_table extends React.Component{
+class Config_table extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      table:[]
+    this.state = {
+      table: [],
+      table_id:0
+      
     }
+    
   }
 
-    OnSubmit = (e)=>{
-        e.preventDefault()
-        const table_id = this.getTableID.value;
-        localStorage.setItem('table_id', table_id);  
-        this.props.history.push('/home');
-        
-    }
+  OnSubmit = (e) => {
+    e.preventDefault()
+    const table_id = this.getTableID.value;
+    localStorage.setItem('table_id', table_id);
+    this.props.history.push('/home');
 
-    componentDidMount(){
-      axios.get(api('getAllTable'))
+  }
+
+  componentDidMount() {
+    axios.get(api('getAllTable'))
       .then(res => {
-       const table = res.data.data;
-       this.setState({table})
-       
+        const table = res.data.data;
+        this.setState({ table })
+     
       })
-    }
+  }
 
+  onChangetable = (e) =>{
+    e.preventDefault()
+    const table_id = this.getTableID.value;
+    this.setState({
+      table_id:table_id
+    })
+  }
+
+
+  render() {
   
-    render(){
-        return(
-            <div className="limiter">
-            <div className="container-login100">
-              <div className="wrap-configtable">
-              <span className="login100-form-title">เลือกโต๊ะ</span>
-               
-               <div className="datalist">
-                 
-                <form onSubmit={this.OnSubmit}>
-               <input type="text" id="default" list="table_id" placeholder="เลขโต๊ะ" ref={(input)=>this.getTableID = input}/>
-               
+    return (
+      <div className="limiter">
+        <div className="container-login100">
+          <div className="wrap-configtable">
+            <span className="login100-form-title">เลือกโต๊ะ</span>
 
-                    <datalist id="table_id">
-                    { this.state.table.map(table => <option value={table.t_id}>{table.t_number}</option>)}
-                      
-                          
-                    </datalist>
-                
+            <div className="datalist">
+
+              <form onSubmit={this.OnSubmit}>
+                <input type="text" id="default" onChange={this.onChangetable} list="table_id" placeholder="เลขโต๊ะ" ref={(input) => this.getTableID = input} id="numtable" />
+
+
+                <datalist id="table_id">
+                  {this.state.table.map(table => <option value={table.t_id}>{table.t_number}</option>)}
+
+                </datalist>
+
                 <div className="container-login100-form-btn">
-              <button type="submit" className="config-form-btn">
-                ยืนยัน
-              </button>
+                  { this.state.table_id == 0 ?
+                     <button type="submit" disabled  className="config-form-btn" id="button/table">
+                  กรุณาเลือกโต๊ะ
+               </button>
+                  :
+                  <button type="submit"   className="config-form-btn" id="button/table">
+                      ยืนยัน
+            </button>
+                  }
+               
+                </div>
+              </form>
+
             </div>
-                </form>
-                
-               </div>
-              
-              </div>
-            </div>
-             <Link to="/logout">Logout</Link>
+
           </div>
-        )
-    }
+        </div>
+        <Link to="/logout">Logout</Link>
+      </div>
+    )
+  }
 }
 export default Config_table;

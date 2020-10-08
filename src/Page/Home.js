@@ -9,7 +9,8 @@ import {Link} from 'react-router-dom';
     super(props);
     this.state = {
         data: [],
-        table_id: ""
+        table_id: "",
+        amount_people:0
     }
  
 }
@@ -39,6 +40,16 @@ OnSubmit= (e)=>{
      }
   })
 }
+
+onChangeamount = (e) =>{
+  e.preventDefault()
+  const amount_people = this.getAmountPeople.value;
+  this.setState({
+    amount_people:amount_people
+  })
+}
+
+
     render(){
         return(
           <section className="section">
@@ -64,7 +75,7 @@ OnSubmit= (e)=>{
                 <h3>
                 &nbsp;
                 
-                <select name="ele_select" id="ele_select" ref={(input)=>this.getAmountPeople = input}>
+                <select name="amount" onChange={this.onChangeamount} id="amount" ref={(input)=>this.getAmountPeople = input}>
                   <option value>จำนวนคน</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -79,12 +90,15 @@ OnSubmit= (e)=>{
                 
                 </h3>
                 <br />
+              {this.state.amount_people == 0 ?
+              <button className="w3-btn w3-blue w3-round w3-large" type="submit" disabled id = "button/home" >กรุณาระบุจำนวนคน</button>
+    
+              : 
+              <button className="w3-btn w3-blue w3-round w3-large" type="submit" id = "button/home">ยืนยัน</button>
+              }
 
-              <button className="w3-btn w3-blue w3-round w3-large" type="submit">ยืนยัน</button>
-              
               &nbsp;&nbsp;
               <Link to="/"><button className="w3-btn w3-dark-grey w3-round w3-large" type="reset">ยกเลิก</button></Link>
-        
             </div>
             </form>
             {/* <Link to="/logout">Logout</Link> */}

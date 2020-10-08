@@ -108,7 +108,7 @@ import {Link} from 'react-router-dom';
                                   this.state.data.map( obj =>
                                   
                            
-                            <tr onClick={this.chooseOrder.bind("Undata", obj.o_id)}>
+                            <tr onClick={this.chooseOrder.bind("Undata", obj.o_id)} id = "click">
                                 <td>{this.state.count+=1}</td>
                                 <td>
                                     <h6>{obj.o_id}</h6>
@@ -132,7 +132,7 @@ import {Link} from 'react-router-dom';
                                 <td>&nbsp;</td>
                                 <td colSpan={2}>
                                     <br />
-                                    <a className="w3-btn w3-dark-grey w3-round w3-small" href="#menu">
+                                    <a className="w3-btn w3-dark-grey w3-round w3-small" href="#menu" id = "back/menu">
                                     ย้อนกลับ
                                     </a>
                                 </td>
@@ -197,7 +197,7 @@ import {Link} from 'react-router-dom';
                                 <td>&nbsp;</td>
                                 <td colSpan={2}>
                                     <br />
-                                    <button className="w3-btn w3-dark-grey w3-round w3-small" onClick={this.backToOrder}>
+                                    <button className="w3-btn w3-dark-grey w3-round w3-small" onClick={this.backToOrder} id = "back/showall">
                                     ย้อนกลับ
                                     </button>
                                 </td>
