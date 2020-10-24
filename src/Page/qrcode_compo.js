@@ -21,7 +21,7 @@ class Qrcode_compo extends React.Component {
     render(){
         return(
             <div>
-                <QRcode className="styleQR" size="350"  value={"https://mike604259003.github.io/react-project-mobile/#/home/" + this.state.table_id + "/" + this.state.bill_id} />
+                <QRcode className="styleQR" size="300"  value={"https://mike604259003.github.io/react-project-mobile/#/home/" + this.state.table_id + "/" + this.state.bill_id} />
             </div>
         )
     }
