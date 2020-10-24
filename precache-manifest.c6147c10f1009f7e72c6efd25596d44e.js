@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3b7300a5db793360d7c56acd757249be",
+    "revision": "98ee74cca19d1f888c60f72cc25a20ad",
     "url": "/react-project-tablet/index.html"
   },
   {
-    "revision": "273dc9712330d7267a7a",
+    "revision": "cea56be9e7892d105149",
     "url": "/react-project-tablet/static/css/2.d34346ea.chunk.css"
   },
   {
-    "revision": "2a5be48fd424366091a8",
+    "revision": "f7168a88979822b4a542",
     "url": "/react-project-tablet/static/css/main.aa90a491.chunk.css"
   },
   {
-    "revision": "273dc9712330d7267a7a",
-    "url": "/react-project-tablet/static/js/2.184509c0.chunk.js"
+    "revision": "cea56be9e7892d105149",
+    "url": "/react-project-tablet/static/js/2.88bdfec7.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/react-project-tablet/static/js/2.184509c0.chunk.js.LICENSE.txt"
+    "url": "/react-project-tablet/static/js/2.88bdfec7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2a5be48fd424366091a8",
-    "url": "/react-project-tablet/static/js/main.bdfcebe7.chunk.js"
+    "revision": "f7168a88979822b4a542",
+    "url": "/react-project-tablet/static/js/main.6429393e.chunk.js"
   },
   {
     "revision": "9da4d528d41a880deb85",
